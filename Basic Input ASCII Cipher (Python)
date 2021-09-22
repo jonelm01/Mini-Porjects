@@ -1,0 +1,28 @@
+#Jonel Muncan
+word = input('Enter a word:')
+shift = input('How much to shift by?')
+numShift = int(shift)
+
+codedWord = ""
+
+for letter in word:
+    if ord(letter) > ord('A'):
+        offset = ord(letter) - ord('a')
+        wrap = (offset + numShift) % 26       
+        codedLetter= wrap + ord('a')
+        codedWord = codedWord + (chr(codedLetter))
+    else:
+        offset = ord(letter) - ord('A') 
+        wrap = (offset + numShift) % 26       
+        codedLetter= wrap + ord('A')
+        codedWord = codedWord + (chr(codedLetter))
+
+print('Your word in code is ' + codedWord)
+
+input("Please press ENTER to quit")
+
+#iterates through each letter in a word, and for each,
+#converts it into its corresponding ASCII decimal value. Then,
+#the decimal value of A or a is subtracted from each letter based on case,
+#as to find its place in the alphabet,  from which the remainder is
+#calculated to see how much the letter should be shifted by to account for "wrap".
