@@ -1,0 +1,22 @@
+#Jonel Muncan
+
+phraseBackwards = ""
+phraseAcronym = ""
+phrase = input('Enter a phrase:')
+
+for i in phrase[::-1]:
+    phraseBackwards = phraseBackwards + i  #iterates through phrase, letter by letter, in reverse, assigning to a seperate variable.
+
+phraseSeperate = phraseBackwards.split(" ") #splits the phrase between spaces into a list of seperate words  
+
+for word in phraseSeperate:
+    phraseAcronym = phraseAcronym + word[-1] #iterates through the seperated list and takes the "last letter" of each backwards word to make an acronym
+    
+print("Enter a phrase: " + phrase)
+print("Reversed phrase: " + phraseBackwards)
+print('Last letter of reversed words: ' + phraseAcronym.upper())
+
+input("Please press ENTER to close")
+
+
+
